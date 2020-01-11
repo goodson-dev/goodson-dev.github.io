@@ -1,0 +1,14 @@
+.l-dev-layout {
+	color: #888;
+	display: table;
+	font-family: sans-serif;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+.l-dev-layout__inner {
+	display: table-cell;
+	vertical-align: middle;
+	margin: 2em auto;
+}

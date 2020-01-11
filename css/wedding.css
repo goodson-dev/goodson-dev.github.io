@@ -1,0 +1,158 @@
+:root {
+	--gable-green: #163E3A;
+	--zinnwaldite: #edc2b2;
+	--white: #fff;
+}
+
+html {
+	background: var(--zinnwaldite);
+}
+
+body {
+	background: var(--zinnwaldite);
+	color: var(--gable-green);
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+
+.l-sticky-header {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.l-page-h1 {
+	margin-bottom: 5px;
+}
+.l-page-date {
+	margin-bottom: 15px;
+}
+.l-h2 {
+	margin-bottom: 40px;
+}
+
+
+.c-site-header {
+	background: var(--zinnwaldite);
+	padding: 15px 0;
+}
+
+.c-button {
+	background: var(--gable-green);
+	color: var(--white);
+	display: inline-block;
+	padding: 0.5em 2em;
+	text-align: center;
+}
+.c-button--100w {
+	width: 100%;
+}
+.c-button:hover {
+	color: var(--white);
+	text-decoration: none;
+}
+
+
+.c-section {
+	background: var(--white);
+	padding: 60px 0;
+	text-align: center;
+}
+.c-section--pink {
+	background: var(--zinnwaldite);
+}
+
+
+.c-main-image {
+	margin-bottom: 40px;
+	max-height: 75vh;
+	max-width: calc(100% - 30px);
+}
+
+.c-h1 {
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 0.2em;
+	margin: 0;
+}
+
+.c-h2 {
+	font-family: 'Kanit', sans-serif;
+	font-size: 32px;
+	letter-spacing: 6px;
+	margin: 0;
+	text-transform: uppercase;
+}
+.c-th {
+	font-size: 26px;
+	letter-spacing: 4px;
+	text-transform: lowercase;
+}
+
+.c-arrow-down {
+	width: 50px;
+}
+
+.c-p {
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 1.75em;
+}
+
+.c-parallax-wrapper {
+	/* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+	height: 100vh;
+	/* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+	overflow-x: hidden;
+	/* Enable scrolling on the page. */
+	overflow-y: auto;
+	/* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+	perspective: 2px;
+}
+.c-parallax {
+	height: 80vh;
+	position: relative;
+}
+.c-parallax--love:after {
+	background: url(/images/love.jpg) no-repeat;
+	background-position: center center;
+	/* Display and position the pseudo-element */
+	content: " ";
+	position: absolute;
+	top: -10%;
+	right: 0;
+	bottom: -10%;
+	left: 0;
+	
+	/* Move the pseudo-element back away from the camera,
+	* then scale it back up to fill the viewport.
+	* Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+	transform: translateZ(-1px) scale(1.5);
+	/* Force the background image to fill the whole element. */
+	background-size: cover;
+	/* Keep the image from overlapping sibling elements. */ 
+	z-index: -1;
+}
+
+.c-parallax--marriage:after {
+	background: url(/images/marriage.jpg) no-repeat;
+	background-position: center center;
+	/* Display and position the pseudo-element */
+	content: " ";
+	position: absolute;
+	top: -5%;
+	right: 0;
+	bottom: -10%;
+	left: 0;
+	
+	/* Move the pseudo-element back away from the camera,
+	* then scale it back up to fill the viewport.
+	* Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+	transform: translateZ(-1px) scale(1.5);
+	/* Force the background image to fill the whole element. */
+	background-size: cover;
+	/* Keep the image from overlapping sibling elements. */ 
+	z-index: -1;
+}
