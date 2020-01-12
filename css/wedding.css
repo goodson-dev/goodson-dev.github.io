@@ -14,6 +14,11 @@ body {
 	font-family: 'Nunito Sans', sans-serif;
 }
 
+.l-anchor {
+	position: relative;
+	top: -70px;
+}
+
 
 .l-sticky-header {
 	position: sticky;
@@ -35,6 +40,17 @@ body {
 .c-site-header {
 	background: var(--zinnwaldite);
 	padding: 15px 0;
+}
+
+.c-nav-link {
+	color: var(--gable-green);
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	transition: color 400ms ease 0s;
+}
+.c-nav-link:hover, .c-nav-link:active, .c-nav-link:focus, .c-nav-link.is-active {
+	color: var(--white);
+	text-decoration: none;
 }
 
 .c-button {
@@ -100,7 +116,7 @@ body {
 	line-height: 1.75em;
 }
 
-.c-parallax-wrapper {
+.l-parallax-wrapper {
 	/* The height needs to be set to a fixed value for the effect to work.
    * 100vh is the full height of the viewport. */
 	height: 100vh;
@@ -110,6 +126,7 @@ body {
 	overflow-y: auto;
 	/* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
 	perspective: 2px;
+	scroll-behavior: smooth;
 }
 .c-parallax {
 	height: 80vh;
