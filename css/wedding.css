@@ -48,6 +48,9 @@ body {
 	padding-top: 0.5em;
 	transition: color 400ms ease 0s;
 }
+.c-nav-link--bordered {
+	border: 1px dashed;
+}
 .c-nav-link:hover, .c-nav-link:active, .c-nav-link:focus, .c-nav-link.is-active {
 	color: var(--white);
 	text-decoration: none;
