@@ -134,6 +134,16 @@
 		</section>
 	</div>
 	<script src="/js/active-nav.js"></script>
+	<script>
+		// apply smooth scrolling after page load so initial page hash doesn't do the animated scroll 
+		setTimeout(() => {
+			const css = '.l-parallax-wrapper { scroll-behavior: smooth; }'
+			const style = document.createElement('style')
+			style.type = 'text/css'
+			style.appendChild(document.createTextNode(css))
+			document.head.appendChild(style)
+		}, 0)
+	</script>
 </body>
 
 </html>
