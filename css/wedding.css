@@ -14,6 +14,13 @@ body {
 	font-family: 'Nunito Sans', sans-serif;
 }
 
+.h-text-left {
+	text-align: left;
+}
+.h-text-right {
+	text-align: right;
+}
+
 .l-anchor {
 	position: relative;
 	top: -70px;
@@ -175,4 +182,79 @@ body {
 	background-size: cover;
 	/* Keep the image from overlapping sibling elements. */ 
 	z-index: -1;
+}
+
+
+.c-chat-box {
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 78%;
+	min-width: 345px;
+	padding: 1em;
+}
+
+.c-speech-bubble {
+	border: 1px solid;
+	border-radius: 10px;
+	display: inline-block;
+	overflow: visible;
+	padding: 1em;
+	position: relative;
+	text-align: left;
+}
+.c-speech-bubble--left, .c-speech-bubble--right {
+	margin-bottom: 20px;
+}
+.c-speech-bubble--left:before {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid;
+	border-right: 10px solid transparent;
+	border-top: 10px solid;
+	border-bottom: 10px solid transparent;
+	left: 23px;
+	bottom: -20px;
+}
+.c-speech-bubble--left:after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid #fff;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #fff;
+	border-bottom: 10px solid transparent;
+	left: 24px;
+	bottom: -18px;
+}
+.c-speech-bubble--right:before {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid;
+	border-top: 10px solid;
+	border-bottom: 10px solid transparent;
+	right: 23px;
+	bottom: -20px;
+}
+.c-speech-bubble--right:after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid #fff;
+	border-top: 10px solid #fff;
+	border-bottom: 10px solid transparent;
+	right: 24px;
+	bottom: -18px;
 }
