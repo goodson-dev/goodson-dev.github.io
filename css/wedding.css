@@ -20,6 +20,29 @@ body {
 .h-text-right {
 	text-align: right;
 }
+.h-responsive-border:after {
+	content: "";
+	border-right: 2px solid var(--gable-green);
+	height: 70%;
+	position: absolute;
+	right: 0;
+	top: 10%;;
+}
+@media (max-width: 767.98px) {
+	.h-responsive-border {
+		margin-bottom: 1rem;
+	}
+	.h-responsive-border:after {
+		border-right: 0;
+		border-bottom: 1px solid var(--gable-green);
+		bottom: 0;
+		height: 0;
+		left: 15%;
+		top: auto;
+		width: 70%;
+	}
+}
+
 
 .l-anchor {
 	position: relative;
@@ -115,7 +138,7 @@ body {
 .c-h3 {
 	font-size: 24px;
 	font-weight: normal;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 	margin: 0;
 }
 .c-th {
