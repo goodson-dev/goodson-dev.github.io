@@ -1,0 +1,311 @@
+:root {
+	--gable-green: #163E3A;
+	--zinnwaldite: #edc2b2;
+	--white: #fff;
+}
+
+html {
+	background: var(--zinnwaldite);
+}
+
+body {
+	background: var(--zinnwaldite);
+	color: var(--gable-green);
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+.h-list-none {
+	list-style: none;
+	padding-left: 0;
+}
+.h-text-left {
+	text-align: left;
+}
+.h-text-right {
+	text-align: right;
+}
+.h-responsive-border:after {
+	content: "";
+	border-right: 2px solid var(--gable-green);
+	height: 70%;
+	position: absolute;
+	right: 0;
+	top: 10%;;
+}
+@media (max-width: 767.98px) {
+	.h-responsive-border {
+		margin-bottom: 1rem;
+	}
+	.h-responsive-border:after {
+		border-right: 0;
+		border-bottom: 1px solid var(--gable-green);
+		bottom: 0;
+		height: 0;
+		left: 15%;
+		top: auto;
+		width: 70%;
+	}
+}
+
+
+.l-anchor {
+	position: relative;
+	top: -70px;
+}
+
+
+.l-sticky-header {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.l-page-h1 {
+	margin-bottom: 5px;
+}
+.l-page-date {
+	margin-bottom: 15px;
+}
+.l-h2 {
+	margin-bottom: 40px;
+}
+.l-h3 {
+	margin-bottom: 10px;
+}
+
+.l-spaced-list li {
+	margin-bottom: 1em;
+	overflow: auto;
+}
+
+
+.c-site-header {
+	background: var(--zinnwaldite);
+	padding: 15px 0;
+}
+
+.c-nav-link {
+	color: var(--gable-green);
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	transition: color 400ms ease 0s;
+}
+.c-nav-link--bordered {
+	border: 1px dashed;
+}
+.c-nav-link:hover, .c-nav-link:active, .c-nav-link:focus, .c-nav-link.is-active {
+	color: var(--white);
+	text-decoration: none;
+}
+
+.c-button {
+	background: var(--gable-green);
+	color: var(--white);
+	display: inline-block;
+	padding: 0.5em 2em;
+	text-align: center;
+}
+.c-button--100w {
+	width: 100%;
+}
+.c-button:hover {
+	color: var(--white);
+	text-decoration: none;
+}
+
+
+.c-section {
+	background: var(--white);
+	padding: 60px 0;
+	text-align: center;
+}
+.c-section--pink {
+	background: var(--zinnwaldite);
+}
+
+
+.c-main-image {
+	margin-bottom: 40px;
+	max-height: 75vh;
+	max-width: calc(100% - 30px);
+}
+
+.c-h1 {
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 0.2em;
+	margin: 0;
+}
+
+.c-h2 {
+	font-family: 'Kanit', sans-serif;
+	font-size: 32px;
+	letter-spacing: 6px;
+	margin: 0;
+	text-transform: uppercase;
+}
+.c-h3 {
+	font-size: 24px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	margin: 0;
+}
+.c-th {
+	font-size: 26px;
+	letter-spacing: 4px;
+	text-transform: lowercase;
+}
+
+.c-arrow-down {
+	width: 50px;
+}
+
+.c-p {
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 1.75em;
+}
+
+.l-parallax-wrapper {
+	/* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+	height: 100vh;
+	/* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+	overflow-x: hidden;
+	/* Enable scrolling on the page. */
+	overflow-y: auto;
+	/* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+	perspective: 2px;
+	transform: translate3d(0, 0, 0); /* prompt gpu acceleration */
+}
+.c-parallax {
+	height: 80vh;
+	position: relative;
+}
+.c-parallax--love:after {
+	background: url(/images/love.jpg) no-repeat;
+	background-position: center center;
+	/* Display and position the pseudo-element */
+	content: " ";
+	position: absolute;
+	top: -10%;
+	right: 0;
+	bottom: -10%;
+	left: 0;
+	
+	/* Move the pseudo-element back away from the camera,
+	* then scale it back up to fill the viewport.
+	* Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+	transform: translateZ(-1px) scale(1.5);
+	/* Force the background image to fill the whole element. */
+	background-size: cover;
+	/* Keep the image from overlapping sibling elements. */ 
+	z-index: -1;
+}
+
+.c-parallax--marriage:after {
+	background: url(/images/marriage.jpg) no-repeat;
+	background-position: center center;
+	/* Display and position the pseudo-element */
+	content: " ";
+	position: absolute;
+	top: -5%;
+	right: 0;
+	bottom: -10%;
+	left: 0;
+	
+	/* Move the pseudo-element back away from the camera,
+	* then scale it back up to fill the viewport.
+	* Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+	transform: translateZ(-1px) scale(1.5);
+	/* Force the background image to fill the whole element. */
+	background-size: cover;
+	/* Keep the image from overlapping sibling elements. */ 
+	z-index: -1;
+}
+
+
+.c-chat-box {
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 78%;
+	min-width: 345px;
+	padding: 1em;
+}
+
+.c-speech-bubble {
+	border: 1px solid;
+	border-radius: 10px;
+	display: inline-block;
+	overflow: visible;
+	padding: 1em;
+	position: relative;
+	text-align: left;
+}
+.c-speech-bubble--left, .c-speech-bubble--right {
+	margin-bottom: 20px;
+}
+.c-speech-bubble--left:before {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid;
+	border-right: 10px solid transparent;
+	border-top: 10px solid;
+	border-bottom: 10px solid transparent;
+	left: 23px;
+	bottom: -20px;
+}
+.c-speech-bubble--left:after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid var(--white);
+	border-right: 10px solid transparent;
+	border-top: 10px solid var(--white);
+	border-bottom: 10px solid transparent;
+	left: 24px;
+	bottom: -18px;
+}
+.c-speech-bubble--right:before {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid;
+	border-top: 10px solid;
+	border-bottom: 10px solid transparent;
+	right: 23px;
+	bottom: -20px;
+}
+.c-speech-bubble--right:after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid var(--white);
+	border-top: 10px solid var(--white);
+	border-bottom: 10px solid transparent;
+	right: 24px;
+	bottom: -18px;
+}
+
+.c-map-section {
+	background: #e5e3df;
+	filter: saturate(0.65);
+}
+
+.c-map {
+	border: 0;
+	display: block;
+}

@@ -1,0 +1,59 @@
+:root {
+	--gable-green: #163E3A;
+	--zinnwaldite: #edc2b2;
+	--white: #fff;
+}
+
+.l-dev-layout {
+	color: #888;
+	display: table;
+	font-family: sans-serif;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+.l-dev-layout__inner {
+	display: table-cell;
+	vertical-align: middle;
+	margin: 2em auto;
+}
+.l-badge {
+	margin-bottom: 10px;
+}
+
+.c-tosh-badge {
+	background: url(/images/tosh.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border-radius: 100%; 
+	overflow: hidden;
+	padding-top: 100%;
+}
+
+.c-allie-badge {
+	background: url(/images/allie.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border-radius: 100%; 
+	overflow: hidden;
+	padding-top: 100%;
+}
+
+.c-wedding-badge {
+	background: url(/images/tosh-allie.png) var(--zinnwaldite);
+	background-position: 59% 37%;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	border-radius: 100%; 
+	overflow: hidden;
+	padding-top: 100%;
+}
+
+.c-badge-link {
+	color: #333;
+}
+
+.c-badge-link:hover {
+	color: #333;
+}
