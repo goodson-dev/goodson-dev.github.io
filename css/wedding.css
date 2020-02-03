@@ -14,6 +14,10 @@ body {
 	font-family: 'Nunito Sans', sans-serif;
 }
 
+.h-list-none {
+	list-style: none;
+	padding-left: 0;
+}
 .h-text-left {
 	text-align: left;
 }
@@ -67,6 +71,11 @@ body {
 }
 .l-h3 {
 	margin-bottom: 10px;
+}
+
+.l-spaced-list li {
+	margin-bottom: 1em;
+	overflow: auto;
 }
 
 
