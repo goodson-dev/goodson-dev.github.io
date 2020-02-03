@@ -44,3 +44,4 @@ const handleScroll = _.throttle((event) => {
 }, 100);
 
 scrollEl.addEventListener("scroll", handleScroll)
+handleScroll() // run initially
