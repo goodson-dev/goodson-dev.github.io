@@ -26,7 +26,6 @@ var snowStorm = (function(window, document) {
     this.animationInterval = 50;    // Theoretical "miliseconds per frame" measurement. 20 = fast + smooth, but high CPU use. 50 = more conservative, but slower
     this.useGPU = true;             // Enable transform-based hardware acceleration, reduce CPU load.
     this.className = null;          // CSS class name for further customization on snow elements
-    this.excludeMobile = true;      // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) By default, be nice.
     this.flakeBottom = null;        // Integer for Y axis snow limit, 0 or null for "full-screen" snow effect
     this.followMouse = false;        // Snow movement can respond to the user's mouse
     this.snowColor = '#fff';        // Don't eat (or use?) yellow snow.
@@ -42,7 +41,7 @@ var snowStorm = (function(window, document) {
   
     this.freezeOnBlur = true;       // Only snow when the window is in focus (foreground.) Saves CPU.
     this.flakeLeftOffset = 0;       // Left margin/gutter space on edge of container (eg. browser window.) Bump up these values if seeing horizontal scrollbars.
-    this.flakeRightOffset = 0;      // Right margin/gutter space on edge of container
+    this.flakeRightOffset = 100;      // Right margin/gutter space on edge of container
     this.flakeWidth = 50;            // Max pixel width reserved for snow element
     this.flakeHeight = 50;           // Max pixel height reserved for snow element
     this.vMaxX = 1;                 // Maximum X velocity range for snow
@@ -426,7 +425,7 @@ var snowStorm = (function(window, document) {
         var vX = s.vX*windOffset, yDiff;
         s.x += vX;
         s.y += (s.vY*s.vAmp);
-        if (s.x >= screenX || screenX-s.x < storm.flakeWidth) { // X-axis scroll check
+        if (s.x >= screenX + storm.flakeRightOffset || screenX-s.x < storm.flakeWidth - storm.flakeRightOffset) { // X-axis scroll check
           s.x = 0;
         } else if (vX < 0 && s.x-storm.flakeLeftOffset < -storm.flakeWidth) {
           s.x = screenX-storm.flakeWidth-1; // flakeWidth;
