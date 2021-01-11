@@ -30,6 +30,7 @@ var snowStorm = (function(window, document) {
     this.followMouse = false;        // Snow movement can respond to the user's mouse
     this.snowColor = '#fff';        // Don't eat (or use?) yellow snow.
     this.snowCharacter = '<img src="/images/coronavirus.png" style="width: 100%;">';  // &bull; = bullet, &middot; is square on some systems etc.
+    this.snowCharacterDance = '<img src="/images/ronadance.gif" style="width: 100%;">';  // &bull; = bullet, &middot; is square on some systems etc.
     this.snowStick = true;          // Whether or not snow should "stick" at the bottom. When off, will never collect.
     this.targetElement = null;      // element which snow will be appended to (null = document.body) - can be an element ID eg. 'myDiv', or a DOM node reference
     this.useMeltEffect = true;      // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
@@ -354,6 +355,7 @@ var snowStorm = (function(window, document) {
     };
   
     this.SnowFlake = function(type,x,y) {
+      var isDancer = Math.random() > 0.8;
       var s = this;
       this.type = type;
       this.x = x||parseInt(rnd(screenX-20),10);
@@ -387,6 +389,13 @@ var snowStorm = (function(window, document) {
       this.o.style.overflow = 'hidden';
       this.o.style.fontWeight = 'normal';
       this.o.style.zIndex = storm.zIndex;
+
+      if (isDancer) {
+        this.o.style.width = '150px';
+        this.o.style.height = '150px';
+        this.o.innerHTML = storm.snowCharacterDance;
+      }
+
       docFrag.appendChild(this.o);
   
       this.refresh = function() {
@@ -440,7 +449,7 @@ var snowStorm = (function(window, document) {
             s.recycle();
           }
         } else {
-          if (storm.useMeltEffect && s.active && s.type < 3 && !s.melting && Math.random()>0.998) {
+          if (storm.useMeltEffect && s.active && s.type < 3 && !s.melting && (!isDancer && Math.random()>0.998) || (isDancer && Math.random()>0.9998)) {
             // ~1/1000 chance of melting mid-air, with each frame
             s.melting = true;
             s.melt();
